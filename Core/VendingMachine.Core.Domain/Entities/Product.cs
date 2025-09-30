@@ -3,7 +3,7 @@ namespace VendingMachine.Core.Domain.Entities;
 public class Product
 {
     private string _name;
-    public string Name
+    public required string Name
     {
         get => _name;
 
@@ -19,7 +19,7 @@ public class Product
     }
 
     private int _price;
-    public int Price
+    public required int Price
     {
         get => _price;
 
