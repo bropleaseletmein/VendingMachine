@@ -3,8 +3,8 @@ namespace VendingMachine.Core.Domain.Dto.Response;
 
 public class Result
 {
-    public bool IsSuccess  { get; }    
-    public string[] Messages  { get; } = [];
+    public bool IsSuccess { get; }    
+    public string[] Messages { get; } = [];
 
     public Result(bool isSuccess)
     {
