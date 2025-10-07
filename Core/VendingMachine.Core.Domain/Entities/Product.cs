@@ -2,6 +2,21 @@ namespace VendingMachine.Core.Domain.Entities;
 
 public class Product
 {
+    private int _id;
+    public int Id
+    {
+        get => _id;
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("Id продукта должен быть неотрицательным");
+            }
+            
+            _id = value;
+        }
+    }
+    
     private string _name;
     public required string Name
     {
