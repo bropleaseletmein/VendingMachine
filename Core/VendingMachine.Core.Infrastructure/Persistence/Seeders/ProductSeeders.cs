@@ -1,6 +1,6 @@
 namespace VendingMachine.Core.Infrastructure.Persistence.Seeders;
 
-public static class ProductsSeeders
+public static class ProductSeeders
 {
-    private 
+    
 }

@@ -53,4 +53,19 @@ public class Product
             _price = value;
         }
     }
+
+    private int _amount;
+    public int Amount
+    {
+        get => _amount;
+        set
+        {
+            if (_amount < 0)
+            {
+                throw new ArgumentException("Количество товара не может быть меньше 0");
+            }
+            
+            _amount = value;    
+        }
+    }
 }
