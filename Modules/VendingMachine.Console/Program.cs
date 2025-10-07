@@ -8,6 +8,9 @@ var moneyRepository = new MoneyRepository();
 var service = new VendingMachineService(productRepository, moneyRepository);
 var session = new VendingSession();
 
+//да, это надо в конфиге держать, но я не успеваю это 
+const string adminPassword = "veryStrongPasswordOutsideOfConfiguration)))";
+
 while (true)
 {
     Console.WriteLine("\n=== ВЕНДИНГОВЫЙ АВТОМАТ ===");
@@ -27,22 +30,37 @@ while (true)
         case "1":
             ShowProducts();
             break;
+        
         case "2":
             InsertMoney();
             break;
+        
         case "3":
             BuyProduct();
             break;
+        
         case "4":
             var returned = session.InsertedMoney;
             session.Reset();
             Console.WriteLine($"Возвращено пользователю: {returned}");
             break;
+        
         case "5":
-            AdminMenu();
+            Console.Write("Введите пароль администратора: ");
+            var pwd = Console.ReadLine();
+            if (pwd == adminPassword)
+            {
+                AdminMenu();
+            }
+            else
+            {
+                Console.WriteLine("Неверный пароль.");
+            }
             break;
+
         case "0":
             return;
+        
         default:
             Console.WriteLine("Неизвестная команда.");
             break;
